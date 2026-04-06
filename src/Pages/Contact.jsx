@@ -9,8 +9,8 @@ const Contact = () => {
           <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
           <p className="text-gray-600 mb-6">Have questions? Send us a message and we'll get back to you shortly.</p>
           <div className="space-y-2">
-            <p className="font-medium text-orange-600">Email: Anitashopee101@gmail.com</p>
-            <p className="font-medium text-orange-600">Phone: =977 9765575323</p>
+            <p className="font-medium text-orange-600">Email: Anitahshopee101@gmail.com</p>
+            <p className="font-medium text-orange-600">Phone: 977 9765575323</p>
           </div>
         </div>
         <form className="flex flex-col gap-4">

@@ -7,12 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "frontend": "npm run dev",
+    "backend": "cd backend && venv\\Scripts\\python manage.py runserver",
+    "project": "concurrently \"npm run frontend\" \"npm run backend\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.1",
     "axios": "^1.13.6",
+    "concurrently": "^9.2.1",
     "lucide-react": "^0.575.0",
+    "mongodb": "^7.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.13.1",

@@ -17,7 +17,7 @@ const Service = () => {
       <section className="bg-orange-50 py-16 px-10 text-center">
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">How Can We Help You?</h1>
         <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          At Shopee, we are committed to providing the best shopping experience with world-class logistics and customer care.
+          At Bare & Bold, we are committed to providing the best shopping experience with world-class logistics and customer care.
         </p>
       </section>
 
