@@ -1,60 +1,55 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-10 pb-5">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-800 pb-12">
-        
-        {/* Branding Section */}
-        <div className="col-span-1 md:col-span-1">
-          <h2 className="text-2xl font-bold text-orange-500 mb-4">Shopee</h2>
-          <p className="text-gray-400 leading-relaxed">
+    <footer className="bg-gray-900 px-4 pb-8 pt-10 text-white sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 border-b border-gray-800 pb-12 md:grid-cols-2 xl:grid-cols-4">
+        <div>
+          <h2 className="mb-4 text-2xl font-bold text-orange-500">Shopee</h2>
+          <p className="leading-relaxed text-gray-400">
             Your one-stop destination for the latest electronics, fashion, and home essentials. Quality products delivered to your door.
           </p>
         </div>
 
-        {/* Quick Links Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-6">Shopping</h3>
+          <h3 className="mb-6 text-lg font-semibold">Menu</h3>
           <ul className="space-y-4 text-gray-400">
-            <li><Link to="/product" className="hover:text-orange-500 transition">All Products</Link></li>
-            <li><Link to="/service" className="hover:text-orange-500 transition">Our Services</Link></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Featured Deals</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">New Arrivals</a></li>
+            <li><Link to="/" className="transition hover:text-orange-500">Home</Link></li>
+            <li><Link to="/about" className="transition hover:text-orange-500">About</Link></li>
+            <li><Link to="/service" className="transition hover:text-orange-500">Our Services</Link></li>
+            <li><Link to="/products" className="transition hover:text-orange-500">All Products</Link></li>
+            <li><Link to="/contact" className="transition hover:text-orange-500">Contact</Link></li>
           </ul>
         </div>
 
-        {/* Support Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-6">Customer Support</h3>
+          <h3 className="mb-6 text-lg font-semibold">Customer Support</h3>
           <ul className="space-y-4 text-gray-400">
-            <li><Link to="/contact" className="hover:text-orange-500 transition">Contact Us</Link></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Shipping Policy</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">Returns & Refunds</a></li>
-            <li><a href="#" className="hover:text-orange-500 transition">FAQs</a></li>
+            <li><Link to="/contact" className="transition hover:text-orange-500">Contact Us</Link></li>
+            <li><Link to="/service" className="transition hover:text-orange-500">Shipping Support</Link></li>
+            <li><Link to="/service" className="transition hover:text-orange-500">Returns & Refunds</Link></li>
+            <li><Link to="/about" className="transition hover:text-orange-500">Store Info</Link></li>
           </ul>
         </div>
 
-        {/* Newsletter Section */}
         <div>
-          <h3 className="text-lg font-semibold mb-6">Stay Updated</h3>
-          <p className="text-gray-400 mb-4 text-sm">Subscribe to get special offers and once-in-a-lifetime deals.</p>
-          <div className="flex">
-            <input 
-              type="email" 
-              placeholder="Email address" 
-              className="bg-gray-800 text-white px-4 py-2 rounded-l-md outline-none focus:ring-1 focus:ring-orange-500 w-full"
+          <h3 className="mb-6 text-lg font-semibold">Stay Updated</h3>
+          <p className="mb-4 text-sm text-gray-400">Subscribe to get special offers and once-in-a-lifetime deals.</p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <input
+              type="email"
+              placeholder="Email address"
+              className="w-full rounded-md bg-gray-800 px-4 py-2 text-white outline-none focus:ring-1 focus:ring-orange-500"
             />
-            <button className="bg-orange-600 px-4 py-2 rounded-r-md hover:bg-orange-700 transition">
+            <button className="rounded-md bg-orange-600 px-4 py-2 transition hover:bg-orange-700">
               Go
             </button>
           </div>
         </div>
       </div>
-
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

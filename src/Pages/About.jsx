@@ -1,61 +1,62 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+const features = [
+  {
+    title: 'Inventory Tracking',
+    description: 'Real-time stock visibility helps teams avoid over-ordering and shortages.',
+    accent: 'border-orange-500',
+    icon: 'Stock',
+  },
+  {
+    title: 'Data Analytics',
+    description: 'See product performance and category activity with a cleaner overview.',
+    accent: 'border-blue-500',
+    icon: 'Insights',
+  },
+  {
+    title: 'Fast Performance',
+    description: 'Built with React and Vite for a quicker, smoother management experience.',
+    accent: 'border-green-500',
+    icon: 'Speed',
+  },
+];
+
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-4">
-      <div className="max-w-5xl mx-auto">
-        {/* Hero Section */}
-        <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12 mb-8 text-center">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
+    <div className="min-h-screen bg-gray-100 px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-8 rounded-3xl bg-white p-8 text-center shadow-sm sm:p-10 md:p-12">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 sm:text-4xl">
             Product Management <span className="text-orange-600">System</span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            A streamlined solution designed to help businesses organize, track, 
-            and manage their inventory with precision and ease.
+          <p className="mx-auto max-w-2xl text-base text-gray-600 sm:text-lg">
+            A streamlined solution designed to help businesses organize, track, and manage their inventory with precision and ease.
           </p>
         </div>
 
-        {/* Feature Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-white p-6 rounded-xl shadow-sm border-b-4 border-orange-500">
-            <div className="text-orange-600 text-2xl mb-3">📦</div>
-            <h3 className="font-bold text-gray-800 text-xl mb-2">Inventory Tracking</h3>
-            <p className="text-gray-500 text-sm">
-              Real-time updates on stock levels to prevent overstocking or running out of essentials.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm border-b-4 border-blue-500">
-            <div className="text-blue-600 text-2xl mb-3">📊</div>
-            <h3 className="font-bold text-gray-800 text-xl mb-2">Data Analytics</h3>
-            <p className="text-gray-500 text-sm">
-              Visualize your product performance and category distribution at a glance.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm border-b-4 border-green-500">
-            <div className="text-green-600 text-2xl mb-3">⚡</div>
-            <h3 className="font-bold text-gray-800 text-xl mb-2">Fast Performance</h3>
-            <p className="text-gray-500 text-sm">
-              Built with React and Vite for a lightning-fast management experience.
-            </p>
-          </div>
+        <div className="mb-12 grid gap-6 md:grid-cols-3">
+          {features.map((feature) => (
+            <div key={feature.title} className={`rounded-2xl border-b-4 ${feature.accent} bg-white p-6 shadow-sm`}>
+              <div className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-gray-500">{feature.icon}</div>
+              <h3 className="mb-2 text-xl font-bold text-gray-800">{feature.title}</h3>
+              <p className="text-sm leading-6 text-gray-500">{feature.description}</p>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom Section */}
-        <div className="bg-gray-800 rounded-2xl p-8 text-center text-white">
-          <h2 className="text-2xl font-semibold mb-4">Ready to manage your stock?</h2>
-          <div className="flex justify-center gap-4">
-            <Link 
-              to="/service" 
-              className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+        <div className="rounded-3xl bg-gray-800 p-8 text-center text-white sm:p-10">
+          <h2 className="mb-4 text-2xl font-semibold">Ready to manage your stock?</h2>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              to="/service"
+              className="rounded-lg bg-orange-600 px-8 py-3 font-medium text-white transition-colors hover:bg-orange-700"
             >
               View Services
             </Link>
-            <Link 
-              to="/Home" 
-              className="bg-transparent border border-gray-400 hover:bg-gray-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+            <Link
+              to="/"
+              className="rounded-lg border border-gray-400 bg-transparent px-8 py-3 font-medium text-white transition-colors hover:bg-gray-700"
             >
               Go Home
             </Link>

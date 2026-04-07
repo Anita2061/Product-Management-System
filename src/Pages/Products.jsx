@@ -76,7 +76,7 @@ const Products = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((products) => (
-            <Link key={products.id} to={`/Products/${products.id}`} className="block no-underline group">
+            <Link key={products.id} to={`/products/${products.id}`} className="block no-underline group">
               <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full">
                 
                 {/* Image Container */}
