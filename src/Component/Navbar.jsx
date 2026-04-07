@@ -43,20 +43,16 @@ const Navbar = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   const navLinkClass = ({ isActive }) =>
-    `transition-colors duration-200 ${isActive ? 'text-gray-900' : 'text-orange-600 hover:text-gray-900'}`;
+    `font-medium transition hover:text-black ${isActive ? 'text-black' : 'text-orange-600'}`;
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-orange-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link
-          to="/"
-          onClick={closeMenu}
-          className="text-xl font-extrabold tracking-tight text-orange-600 sm:text-2xl"
-        >
+    <nav className="bg-white shadow-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-10">
+        <Link to="/" onClick={closeMenu} className="cursor-pointer text-xl font-bold text-orange-600">
           Shopee
         </Link>
 
-        <div className="hidden items-center gap-6 lg:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <NavLink key={link.to} to={link.to} className={navLinkClass}>
               {link.label}
@@ -64,14 +60,11 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            to="/cart"
-            className="relative rounded-full border border-orange-200 px-4 py-2 font-semibold text-orange-600 transition hover:border-orange-400 hover:text-gray-900"
-          >
+        <div className="hidden items-center gap-4 lg:flex">
+          <Link to="/cart" className="relative text-orange-600 font-semibold hover:text-black transition">
             Cart
             {cartCount > 0 ? (
-              <span className="absolute -right-2 -top-2 min-w-5 rounded-full bg-orange-600 px-1.5 py-0.5 text-center text-[10px] font-bold text-white">
+              <span className="absolute -top-2 -right-3 rounded-full bg-orange-600 px-2 text-xs text-white">
                 {cartCount}
               </span>
             ) : null}
@@ -80,14 +73,14 @@ const Navbar = () => {
           {user ? (
             <button
               onClick={handleLogout}
-              className="rounded-full bg-gray-900 px-5 py-2 font-semibold text-white transition hover:bg-black"
+              className="rounded-md bg-gray-900 px-5 py-2 text-white transition hover:bg-black"
             >
               Logout
             </button>
           ) : (
             <Link
               to="/login"
-              className="rounded-full bg-orange-600 px-5 py-2 font-semibold text-white transition hover:bg-orange-700"
+              className="rounded-md bg-red-500 px-6 py-2 text-white transition hover:bg-red-600"
             >
               Login
             </Link>
@@ -97,11 +90,12 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-lg border border-orange-200 p-2 text-orange-600 transition hover:bg-orange-50 lg:hidden"
+          className="inline-flex items-center gap-2 justify-center rounded-lg border border-orange-200 px-3 py-2 text-orange-600 transition hover:bg-orange-50 lg:hidden"
           aria-expanded={isMenuOpen}
           aria-label="Toggle menu"
         >
-          <span className="text-xl leading-none">{isMenuOpen ? 'x' : '='}</span>
+          <span className="text-lg leading-none">{isMenuOpen ? 'x' : '='}</span>
+          <span className="text-sm font-semibold">{isMenuOpen ? 'Close' : 'Menu'}</span>
         </button>
       </div>
 
