@@ -17,16 +17,12 @@ const SignUp = () => {
     setError('');
     setLoading(true);
     try {
-      const res = await api.post('/accounts/signup/', { username, email, password });
-      login(res.data.token, res.data.user);
-      navigate('/products');
+      const response = await api.post('/accounts/signup/', { username, email, password });
+      login(response.data.token, response.data.user);
+      navigate('/');
     } catch (err) {
-      const msg = err?.response?.data?.detail || 
-                  (err?.response?.data && typeof err.response.data === 'object'
-                    ? Object.values(err.response.data).flat().join(' ')
-                    : 'Signup failed');
-      setError(msg);
-      alert(msg); // Help user see exactly why it failed
+      console.error("Full Error Object:", err);
+      setError(err.response?.data?.detail || err.response?.data?.message || "Something went wrong");
     } finally {
       setLoading(false);
     }
