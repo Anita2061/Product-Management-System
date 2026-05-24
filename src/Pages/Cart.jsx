@@ -172,7 +172,7 @@ const Cart = () => {
                     <label className="block text-sm font-semibold text-gray-700 mb-1">Full Name</label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Anita Gyawali"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       required

@@ -17,7 +17,6 @@ const SignUp = () => {
     setError('');
     setLoading(true);
     try {
-<<<<<<< HEAD
       const response = await api.post('/accounts/signup/', { username, email, password });
       login(response.data.token, response.data.user);
       navigate('/');
@@ -25,16 +24,6 @@ const SignUp = () => {
       console.error("Full Error Object:", err);
       setError(err.response?.data?.detail || err.response?.data?.message || "Something went wrong");
     } finally {
-=======
-  const response = await api.post('/api/register/', formData);
-  alert("Success!");
-} catch (error) {
-  // Instead of alert(error), use this:
-  console.error("Full Error Object:", error);
-  alert(error.response?.data?.message || "Something went wrong");
-}
-     finally {
->>>>>>> 0ade13d930a10823aa15e8300847af908b190491
       setLoading(false);
     }
   };
@@ -50,7 +39,7 @@ const SignUp = () => {
             <label className="block text-sm font-semibold text-gray-700 mb-1">Username</label>
             <input
               type="text"
-              placeholder="johndoe"
+              placeholder="Anita Gyawali"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition"
