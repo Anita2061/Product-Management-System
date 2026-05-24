@@ -6,6 +6,7 @@ backend/node_modules/
 # Environment Variables (Secrets)
 .env
 backend/.env
+.env.example
 
 # Build files
 dist/
